@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124.514" height="124.711" viewBox="0 0 124.514 124.711">
+  <g id="Group_26" data-name="Group 26" transform="translate(0 0)">
+    <g id="clock" transform="translate(0 0)">
+      <g id="Group_19" data-name="Group 19" transform="translate(13.165 17.719)">
+        <g id="Group_18" data-name="Group 18">
+          <path id="Path_3" data-name="Path 3" d="M135.191,150.788a49,49,0,1,0-70.749,0l-12.73,16.97a4.454,4.454,0,0,0,7.126,5.345L71.176,156.65a48.635,48.635,0,0,0,57.28,0L140.794,173.1a4.454,4.454,0,0,0,7.126-5.345Zm-30.92-33.807a4.455,4.455,0,0,1-.891,2.672L90.018,137.47a4.454,4.454,0,0,1-7.126-5.345L95.363,115.5V90.256a4.454,4.454,0,0,1,8.908,0v26.725Z" transform="translate(-50.821 -67.893)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_21" data-name="Group 21" transform="translate(0 0.195)">
+        <g id="Group_20" data-name="Group 20">
+          <path id="Path_4" data-name="Path 4" d="M38.2,7.072A22.271,22.271,0,0,0,6.7,38.563a4.454,4.454,0,0,0,6.3,0L38.2,13.37A4.454,4.454,0,0,0,38.2,7.072Z" transform="translate(-0.378 -0.746)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_23" data-name="Group 23" transform="translate(85.198 0)">
+        <g id="Group_22" data-name="Group 22">
+          <path id="Path_5" data-name="Path 5" d="M359.623,6.52a22.27,22.27,0,0,0-31.491,0,4.454,4.454,0,0,0,0,6.3L353.324,38.01a4.454,4.454,0,0,0,6.3,0A22.27,22.27,0,0,0,359.623,6.52Z" transform="translate(-326.828 0.001)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

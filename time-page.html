@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Badminton app</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icons/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./icons/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="./icons/android-chrome-512x512.png"
+    />
+    <link rel="icon" type="image/png" href="favicon.ico" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="score-board">
+        <img src="icons/up-arrow.svg" alt="up" id="player1-up" />
+        <p id="player1-score">0</p>
+        <img src="icons/down-arrow.svg" alt="down" id="player1-down" />
+        <p id="display-player1">John Doe</p>
+      </div>
+      <div class="score-board">
+        <img src="icons/up-arrow.svg" alt="up" id="player2-up" />
+        <p id="player2-score">0</p>
+        <img src="icons/down-arrow.svg" alt="down" id="player2-down" />
+        <p id="display-player2">John Doe</p>
+      </div>
+    </div>
+    <div class="time-board">
+      <h2>Time Left</h2>
+      <h3 id="time-display"></h3>
+    </div>
+  </body>
+  <script>
+    const player1up = document.getElementById("player1-up");
+    const player2up = document.getElementById("player2-up");
+    const player1down = document.getElementById("player1-down");
+    const player2down = document.getElementById("player2-down");
+    const player1Score = document.getElementById("player1-score");
+    const player2Score = document.getElementById("player2-score");
+    const player1Name = document.getElementById("display-player1");
+    const player2Name = document.getElementById("display-player2");
+    const timeDisplay = document.getElementById("time-display");
+
+    player1Name.innerHTML = sessionStorage.getItem("player1Name");
+    player2Name.innerHTML = sessionStorage.getItem("player2Name");
+
+    player1up.onclick = () =>
+      (player1Score.innerHTML = Number(player1Score.innerHTML) + 1);
+    player2up.onclick = () =>
+      (player2Score.innerHTML = Number(player2Score.innerHTML) + 1);
+    player1down.onclick = () =>
+      (player1Score.innerHTML = Number(player1Score.innerHTML) - 1);
+    player2down.onclick = () =>
+      (player2Score.innerHTML = Number(player2Score.innerHTML) - 1);
+
+    const totalLimit = new Date(
+      new Date().setMinutes(
+        new Date().getMinutes() + Number(sessionStorage.getItem("timeLimit"))
+      )
+    );
+
+    setInterval(() => {
+      if (totalLimit.getTime() - new Date().getTime() <= 0) {
+        if (Number(player1Score.innerHTML) > Number(player2Score.innerHTML))
+          sessionStorage.setItem(
+            "Winner",
+            sessionStorage.getItem("player1Name")
+          );
+        else if (Number(player2Score.innerHTML) > Number(player1Score.innerHTML))
+          sessionStorage.setItem(
+            "Winner",
+            sessionStorage.getItem("player2Name")
+          );
+        else sessionStorage.setItem("Winner", "Draw");
+
+        location.replace("/congratulations.html");
+      }
+      console.log(totalLimit.getTime() - new Date().getTime());
+      timeDisplay.innerHTML =
+        Math.floor((totalLimit.getTime() - new Date().getTime()) / 60000) +
+        ":" +
+        (
+          ((totalLimit.getTime() - new Date().getTime()) % 60000) /
+          1000
+        ).toFixed(0);
+    }, 1000);
+  </script>
+    <script src="./js/app.js"></script>
+
+</html>

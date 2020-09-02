@@ -1,0 +1,105 @@
+body {
+  font-family: "Alata", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+div.container {
+  box-shadow: 0 7px 30px -16px black;
+  width: 80%;
+  border-radius: 30px;
+  text-align: center;
+  margin: 25vh auto 0;
+  padding: 1rem;
+}
+
+div.container img {
+  width: 70%;
+}
+
+.container form input {
+  margin: 1rem;
+  border-radius: 30px;
+  border: 1px solid #21c9cf;
+  padding: 0.5rem 10px;
+  outline: none;
+}
+
+a{
+  margin: 1rem 0 1rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  text-decoration: none;
+}
+
+
+.blue {
+  background-color: #21c9cf;
+  color: white;
+  padding: 1rem;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.limit h2 {
+  color: #f65581;
+}
+
+.congratulations {
+  color: #21c9cf;
+  text-align: center;
+  padding: 25vh 1rem 0;
+}
+
+.congratulations * {
+  margin-top: 3rem;
+}
+
+.score-board {
+  display: inline-block;
+  margin: 1rem 2rem;
+  color: #f65581;
+  max-width: 100px;
+  min-width: 90px;
+}
+
+.score-board img {
+  width: 10%;
+  cursor: pointer;
+}
+
+.score-board p {
+  color: #f65581;
+  font-size: 1.2rem;
+}
+
+#player1-score,
+#player2-score {
+  font-size: 2rem;
+}
+
+.time-board {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 60%;
+  margin: 2rem auto;
+  border-radius: 10px;
+  padding: 1px;
+}
+
+
+.score-container{
+  display: flex;
+  justify-items: center;
+  align-content: center;
+}

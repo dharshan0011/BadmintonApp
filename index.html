@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Badminton app</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icons/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./icons/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="./icons/android-chrome-512x512.png"
+    />
+    <link rel="icon" type="image/png" href="favicon.ico" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/logo.png" alt="" />
+      <form>
+        <input
+          type="text"
+          placeholder="Enter Player 1 Name"
+          id="player1-name"
+          required
+        /><br />
+        <input
+          type="text"
+          placeholder="Enter Player 2 Name"
+          id="player2-name"
+          required
+        /><br />
+        <a href="./mode.html" style="background-color: #f65581">
+          Lets Play !
+        </a>
+        <a
+          onclick="handleClick()"
+          id="install-btn"
+          style="background-color: #f65581; margin-left: 3rem; display: none"
+          >Install</a
+        >
+      </form>
+    </div>
+    <script src="./js/app.js"></script>
+    <script>
+      document
+        .getElementById("player1-name")
+        .addEventListener("change", (event) => {
+          sessionStorage.setItem("player1Name", event.target.value);
+          console.log(sessionStorage.getItem("player1Name"));
+        });
+      document
+        .getElementById("player2-name")
+        .addEventListener("change", (event) => {
+          sessionStorage.setItem("player2Name", event.target.value);
+          console.log(sessionStorage.getItem("player2Name"));
+        });
+    </script>
+  </body>
+</html>
