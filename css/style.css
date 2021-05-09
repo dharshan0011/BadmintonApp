@@ -1,5 +1,5 @@
 body {
-  font-family: "Alata", sans-serif;
+  font-family: 'Alata', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -10,7 +10,10 @@ div.container {
   width: 80%;
   border-radius: 30px;
   text-align: center;
-  margin: 25vh auto 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 1rem;
 }
 
@@ -26,7 +29,7 @@ div.container img {
   outline: none;
 }
 
-a{
+a {
   margin: 1rem 0 1rem;
   padding: 0.5rem 1rem;
   color: white;
@@ -35,7 +38,6 @@ a{
   outline: none;
   text-decoration: none;
 }
-
 
 .blue {
   background-color: #21c9cf;
@@ -60,13 +62,13 @@ a{
   padding: 25vh 1rem 0;
 }
 
-.congratulations * {
-  margin-top: 3rem;
+.congratulations h2 {
+  margin: 2rem auto;
 }
 
 .score-board {
   display: inline-block;
-  margin: 1rem 2rem;
+  margin: 1rem 1.5rem;
   color: #f65581;
   max-width: 100px;
   min-width: 90px;
@@ -95,10 +97,16 @@ a{
   margin: 2rem auto;
   border-radius: 10px;
   padding: 1px;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translate(-50%,1.5rem);
+}
+.time-board *{
+  margin: 0.5rem 0;
 }
 
-
-.score-container{
+.score-container {
   display: flex;
   justify-items: center;
   align-content: center;

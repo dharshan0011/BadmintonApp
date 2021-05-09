@@ -1,16 +1,13 @@
-const CACHE_STATIC_NAME = "static-v6";
-const CACHE_DYNAMIC_NAME = "dynamic-v6";
+const CACHE_STATIC_NAME = "static-v1";
+const CACHE_DYNAMIC_NAME = "dynamic-v1";
 
 self.addEventListener("install", (event) => {
   console.log("[Installing Service Worker]");
   event.waitUntil(
     caches.open(CACHE_STATIC_NAME).then((cache) => {
-      cache.addAll([
-        "/",
-        "/index.html",
-        "/js/app.js",
-        "/css/style.css",
-      ]);
+      // cache.add("/index.html");
+      // cache.add("/css/style.css");
+      cache.addAll(["/", "/index.html", "/js/app.js", "/css/style.css"]);
     })
   );
 });
@@ -37,20 +34,36 @@ self.addEventListener("update", (event) => {
 
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      if (response) return response;
-      // else
-      //   return fetch(event.request).then((res) => {
-      //     caches
-      //       .open(CACHE_DYNAMIC_NAME)
-      //       .then((cache) => {
-      //         cache.put(event.request.url, res.clone());
-      //         return res;
-      //       })
-      //       .catch((err) => {
-      //         return caches.match("/offline.html");
-      //       });
-      //   });
-    })
+    caches
+      .match(event.request)
+      .then((response) => {
+        if (response) return response;
+        else {
+          return fetch(event.request);
+          // .then((res) => {
+          //   return caches.open(CACHE_DYNAMIC_NAME).then((cache) => {
+          //     cache.put(event.request.url, res.clone());
+          //     return res;
+          //   });
+          // });
+        }
+      })
+      .catch((err) => {
+        return caches.match("/offline.html");
+      })
+
+    // fetch(event.request)
+    //   .then((res) => {
+    //     return caches.open(CACHE_DYNAMIC_NAME).then((cache) => {
+    //       cache.put(event.request.url, res.clone());
+    //       return res;
+    //     });
+    //   })
+    //   .catch((err) => {
+    //     caches.match(event.request).then((response) => {
+    //       if (response) return response;
+    //       else return caches.match("/offline.html");
+    //     });
+    //   })
   );
 });
